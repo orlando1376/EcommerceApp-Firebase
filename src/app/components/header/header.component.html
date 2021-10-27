@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="header__title" routerLink="/">Ecommerce Orlo</div>
+    <div class="header__navigation">
+        <div *ngIf="!isAuthorized">
+            <a class="app-a" routerLink="auth/registration" routerLinkActive="app-a_active">Registrar</a>
+            <a class="app-a" routerLink="auth/login" routerLinkActive="app-a_active">Login</a>
+        </div>
+
+        <a class="app-a" routerLink="demo" routerLinkActive="app-a_active">Demo</a>
+
+        <div *ngIf="isAuthorized">
+            <a class="app-a" routerLink="jobs">Trabajos</a>
+            <a class="app-a" routerLink="employees">Empleados</a>
+            <a class="app-a" (click)="onProfileNavigate()">Perfil</a>
+            <a class="app-a" (click)="onSignOut()">Cerrar sesion</a>
+        </div>
+    </div>
+</div>

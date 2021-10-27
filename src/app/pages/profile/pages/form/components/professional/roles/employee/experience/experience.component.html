@@ -1,0 +1,23 @@
+<form [formGroup]="parent" class="experiences">
+    <div [formArrayName]="name" *ngIf="parent.controls[name]">
+        <div class="experience" *ngFor="let experience of getControls(); let i = index; let first = first">
+            <div [formGroupName]="i">
+                <app-form-field label="Empresa" [required]="true" [control]="getControl(experience, 'companyName')">
+                    <app-input formControlName="companyName"></app-input>
+                </app-form-field>
+                <app-form-field label="Periodo Laboral" [required]="true" [control]="getControl(experience, 'period')">
+                    <app-date-range formControlName="period"></app-date-range>
+                </app-form-field>
+            </div>
+
+            <div class="experience__footer">
+                <!-- si hay solo una experiencia no debe mostrarce el botón -->
+                <app-button *ngIf="!first" (click)="deleteExperience(i)">Eliminar</app-button>
+            </div>
+        </div>
+    </div>
+
+    <div class="experiences__footer">
+        <app-button (click)="addExperience()">Agregar</app-button>
+    </div>
+</form>

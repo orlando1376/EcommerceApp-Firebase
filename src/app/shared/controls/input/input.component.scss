@@ -1,0 +1,7 @@
+@import "styles/colors";
+// para cuando hay un error colocar el borde en rojo
+:host-context(.form-field_error) {
+    input {
+        border: 1px solid $error;
+    }
+}

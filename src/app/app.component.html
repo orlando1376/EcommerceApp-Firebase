@@ -1,0 +1,2 @@
+<app-header [isAuthorized]="isAuthorized$ | async" (signOut)="onSignOut()" [user]="user$ | async"></app-header>
+<router-outlet></router-outlet>

@@ -1,0 +1,13 @@
+// los archivos mixins se utilizan para compartir estilos
+@import "colors";
+//
+@mixin shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+@mixin card {
+    padding: 32px;
+    background: $base; // viene de colors.scss
+    border-radius: 8px;
+    @include shadow;
+}

@@ -1,0 +1,14 @@
+<div class="form">
+    <form [formGroup]="form" novalidate autocomplete="off" (ngSubmit)="onSubmit()">
+        <app-form-field label="Título" [required]="true" [control]="form.controls.title">
+            <app-input formControlName="title"></app-input>
+        </app-form-field>
+        <app-form-field label="Salario" [required]="true" [control]="form.controls.salary">
+            <app-input formControlName="salary"></app-input>
+        </app-form-field>
+
+        <div class="form__actions">
+            <app-button type="submit">Guardar</app-button>
+        </div>
+    </form>
+</div>

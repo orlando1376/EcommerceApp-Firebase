@@ -1,0 +1,25 @@
+@import "styles/colors";
+.autocomplete {
+    position: relative;
+    &__options {
+        position: relative;
+    }
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    &__icon {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+// en caso de un error
+:host-context(.form-field_error) {
+    input {
+        border: 1px solid $error;
+    }
+}
